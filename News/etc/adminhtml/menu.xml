@@ -4,5 +4,7 @@
 	  <add id="Rsgitech_News::rsgitech" title="RSGiTECH" translate="title" module="Rsgitech_News" sortOrder="90" dependsOnModule="Rsgitech_News" resource="Rsgitech_News::rsgitech"/>
 	  <add id="Rsgitech_News::news" title="News" translate="title" module="Rsgitech_News" parent="Rsgitech_News::rsgitech" sortOrder="50" dependsOnModule="Rsgitech_News" resource="Rsgitech_News::news"/>
 	  <add id="Rsgitech_News::news_allnews" title="All News" translate="title" module="Rsgitech_News" parent="Rsgitech_News::news" sortOrder="10" dependsOnModule="Rsgitech_News" action="news/allnews" resource="Rsgitech_News::news_allnews"/>
+	  <add id="Rsgitech_News::settings" title="Settings" translate="title" module="Rsgitech_News" parent="Rsgitech_News::rsgitech" sortOrder="60" dependsOnModule="Rsgitech_News" resource="Rsgitech_News::settings"/>
+	  <add id="Rsgitech_News::news_config" title="Configuration" translate="title" module="Rsgitech_News" parent="Rsgitech_News::settings" sortOrder="10" dependsOnModule="Rsgitech_News" action="adminhtml/system_config/edit/section/rsgitech_news" resource="Rsgitech_News::news_config"/>
 	</menu>
 </config>
