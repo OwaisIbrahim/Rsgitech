@@ -7,24 +7,17 @@ class Index extends \Magento\Backend\App\Action
 	
 	public function __construct(
 		\Magento\Backend\App\Action\Context $context,
-        \Magento\Framework\View\Result\PageFactory $resultPageFactory,
-        \Rsgitech\News\Helper\Data $helperData,
-        \Rsgitech\News\Model\AllnewsFactory $allNewsFactory
+        \Magento\Framework\View\Result\PageFactory $resultPageFactory
 	) {
 		parent::__construct($context);
 		$this->resultPageFactory = $resultPageFactory;
-        $this->helperData = $helperData;
-        $this->allNewsFactory = $allNewsFactory;
 	}
 
 	public function execute()
 	{
-        $allnews = $this->allNewsFactory->create();
-		$newsCollection = $allnews->getCollection();
-		
-		echo '<pre>';print_r($newsCollection->getData());
-		
-		// return $resultPage = $this->resultPageFactory->create();		
+        $resultPage = $this->resultPageFactory->create();
+        $resultPage->getConfig()->getTitle()->prepend(__('All News'));
+		return $resultPage;		
 	}
 }
 ?>
